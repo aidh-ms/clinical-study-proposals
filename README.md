@@ -98,8 +98,7 @@ Data available from 2018-present (continuously updated)
 
 **Data Science Team**
 
-- **Email**: <icu-datahub@ukmuenster.de>
-- **Lead**: Dr. [Your Name]
+- **Lead**: Dr. Christian Porschen
 - **Response Time**: Within 5 business days
 
 **For Urgent Requests**: Email us directly with "URGENT" in the subject line
