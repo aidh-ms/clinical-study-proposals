@@ -1,0 +1,227 @@
+name: Clinical Study Proposal
+description: Submit a new clinical research proposal for data analysis
+title: "[PROPOSAL] "
+labels: ["proposal", "new-study"]
+assignees:
+  - your-username  # Replace with your GitHub username
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 Clinical Study Proposal Submission
+        
+        Please fill out this form to submit your clinical research proposal. Our data science team will review your submission and contact you within 5 business days.
+        
+        **Need help?** Contact our team at [your-email@hospital.de](mailto:your-email@hospital.de)
+
+  - type: input
+    id: study_title
+    attributes:
+      label: Study Title
+      description: Provide a clear, descriptive title for your research question
+      placeholder: "e.g., Association between early antibiotic administration and outcomes in septic shock patients"
+    validations:
+      required: true
+
+  - type: textarea
+    id: investigators
+    attributes:
+      label: Principal Investigator(s)
+      description: List the research team members
+      placeholder: |
+        Name: Dr. Jane Smith
+        Department: Internal Medicine/ICU
+        Contact: jane.smith@hospital.de
+        Co-Investigators: Dr. John Doe, Dr. Maria Garcia
+    validations:
+      required: true
+
+  - type: dropdown
+    id: study_type
+    attributes:
+      label: Study Type
+      description: Select the type of study you want to conduct
+      options:
+        - Retrospective observational study
+        - Prospective observational study
+        - Case-control study
+        - Cohort study
+        - Clinical trial data analysis
+        - Machine learning/predictive modeling
+        - Other (specify in background section)
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background & Clinical Significance
+      description: Explain why this question is important clinically. What gap in knowledge does it address?
+      placeholder: "e.g., Timing of antibiotic administration in septic shock is critical, but optimal timing windows are debated..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: primary_question
+    attributes:
+      label: Primary Research Question
+      description: State your main research question clearly
+      placeholder: "e.g., Does antibiotic administration within 1 hour vs. 1-3 hours of septic shock recognition affect 28-day mortality?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: study_population
+    attributes:
+      label: Study Population
+      description: Describe the patients you want to study, including inclusion/exclusion criteria
+      placeholder: |
+        Target Population: Adult ICU patients diagnosed with septic shock
+        
+        Inclusion Criteria:
+        - Age ≥ 18 years
+        - ICU admission between 2020-2023
+        - Diagnosis of septic shock
+        
+        Exclusion Criteria:
+        - Comfort care patients
+        - ICU stay < 24 hours
+    validations:
+      required: true
+
+  - type: textarea
+    id: primary_outcome
+    attributes:
+      label: Primary Outcome Variable
+      description: What is your main outcome measure? Include definition, type, and timing
+      placeholder: |
+        Variable Name: 28-day mortality
+        Definition: Death from any cause within 28 days of septic shock recognition
+        Type: Binary (Yes/No)
+        Time Window: 28 days from septic shock recognition
+    validations:
+      required: true
+
+  - type: textarea
+    id: exposure_variable
+    attributes:
+      label: Primary Exposure/Predictor Variable
+      description: What is the main factor you think influences your outcome?
+      placeholder: |
+        Variable Name: Time to antibiotic administration
+        Definition: Time from septic shock recognition to first antibiotic dose
+        Measurement: Continuous (hours) or categorical (<1h, 1-3h, >3h)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: baseline_variables
+    attributes:
+      label: Baseline Variables Needed
+      description: Select all demographic and baseline variables you need
+      options:
+        - label: Age (at ICU admission)
+        - label: Gender
+        - label: Weight/BMI
+        - label: Diabetes mellitus
+        - label: Hypertension
+        - label: Chronic kidney disease
+        - label: Heart failure
+        - label: COPD
+        - label: Cancer (active)
+        - label: Immunosuppression
+        - label: APACHE II score
+        - label: SOFA score
+
+  - type: textarea
+    id: laboratory_variables
+    attributes:
+      label: Laboratory Variables
+      description: List specific lab values with timing requirements
+      placeholder: |
+        1. Serum creatinine (mg/dL) - at admission and daily maximum
+        2. White blood cell count - at admission
+        3. Lactate (mmol/L) - at admission and 6-hour value
+        4. Procalcitonin - if available at admission
+
+  - type: textarea
+    id: medication_variables
+    attributes:
+      label: Medication Variables
+      description: Specify medications relevant to your study with dosing and timing details
+      placeholder: |
+        1. Antibiotics - first dose timing, type, route
+        2. Vasopressors - timing of initiation, maximum dose
+        3. Corticosteroids - if used, timing and dose
+
+  - type: textarea
+    id: time_windows
+    attributes:
+      label: Time Windows & Key Time Points
+      description: Define important time points and measurement windows for your study
+      placeholder: |
+        Key Time Points:
+        - T0 = ICU admission
+        - T1 = Septic shock recognition
+        - T2 = First antibiotic dose
+        - T3 = 28 days post-septic shock
+        
+        Time Windows:
+        - Baseline labs: Within 6 hours of ICU admission
+        - Antibiotic timing: Time from T1 to T2
+        - Outcome assessment: 28 days from T1
+
+  - type: dropdown
+    id: longitudinal_data
+    attributes:
+      label: Longitudinal Data Requirements
+      description: Do you need data tracked over time?
+      options:
+        - "No, only single time point measurements"
+        - "Yes, daily values during ICU stay"
+        - "Yes, specific intervals (specify below)"
+        - "Yes, continuous monitoring data"
+
+  - type: textarea
+    id: analysis_approach
+    attributes:
+      label: Statistical Analysis Approach
+      description: What type of analysis do you envision? (Don't worry if unsure - we can advise)
+      placeholder: |
+        - Comparison between antibiotic timing groups
+        - Logistic regression for 28-day mortality
+        - Adjustment for confounders (age, SOFA score, comorbidities)
+        - Survival analysis if time-to-event outcomes
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline & Deadlines
+      description: When do you need results? Any specific deadlines?
+      placeholder: |
+        Desired completion: 3 months
+        Urgent deadlines: Abstract submission for Congress XYZ (date)
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions for Data Science Team
+      description: Any specific questions or concerns you have?
+      placeholder: |
+        1. Is this sample size sufficient for the analysis?
+        2. Are these variables available in our database?
+        3. Any suggestions for improving the study design?
+
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Agreement
+      description: Please confirm your understanding
+      options:
+        - label: I understand this is a proposal submission and not a guarantee of analysis
+          required: true
+        - label: I agree to collaborate with the data science team on study design refinements
+          required: true
+        - label: I will be available for clarification questions during the review process
+          required: true
