@@ -42,7 +42,7 @@ Our database contains comprehensive data from multiple ICUs at University Hospit
 
 ### **Patient Demographics**
 
-- Age, gender, admission diagnoses
+- Age, gender, admission diagnoses...
 - Comorbidities and medical history
 - Severity scores (APACHE II, SOFA, SAPS II)
 
@@ -61,12 +61,12 @@ Our database contains comprehensive data from multiple ICUs at University Hospit
 ### **Outcomes**
 
 - ICU and hospital length of stay
-- Mortality (ICU, hospital, 28-day, 90-day)
+- Mortality (ICU, hospital, 28-day, 90-day)...
 - Discharge disposition
 
 ### **Time Period**
 
-Data available from 2018-present (continuously updated)
+Data available from 2001-present (continuously updated)
 
 ## 💡 Tips for a Strong Proposal
 
@@ -101,7 +101,7 @@ Data available from 2018-present (continuously updated)
 - **Lead**: Dr. Christian Porschen
 - **Response Time**: Within 5 business days
 
-**For Urgent Requests**: Email us directly with "URGENT" in the subject line
+**For Urgent Requests**: Email project Lead directly with "URGENT" in the subject line
 
 ## 📚 Resources
 
